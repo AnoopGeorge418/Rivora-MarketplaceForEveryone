@@ -59,3 +59,4 @@ Open to freelance backend/full-stack work — let's build something solid togeth
 - GitHub / YouTube / Discord / Medium: [@AnoopGeorge418](https://github.com/AnoopGeorge418)
 
 <p align="center">✨ Made with curiosity, coffee, and a genuine love for backend engineering ✨</p>
+
