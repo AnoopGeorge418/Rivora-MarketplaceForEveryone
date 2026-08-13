@@ -1,4 +1,4 @@
-# **Rivora — Marketplace for Everyone**
+# Rivora - Marketplace for Everyone
 
 Rivora is a full-stack, multi-vendor ecommerce platform built to give anyone — individual sellers, small businesses, and established vendors alike — a place to reach customers, without the complexity or gatekeeping of traditional marketplaces.
 
@@ -47,3 +47,15 @@ Rivora reflects real-world ecommerce platform architecture — role-based multi-
 ---
 
 <p align="center">Built as a deep-dive into full-stack architecture, from database schema to deployment.</p>
+
+## 🧑‍💻 About the Developer
+
+Built with passion and a lot of late-night debugging by **Anoop George** — a freelance full-stack developer specializing in backend architecture, scalable APIs, and production-grade system design.
+
+Rivora showcases the kind of end-to-end thinking I bring to client projects — from database schema and auth architecture to multi-role platforms and deployment pipelines.
+
+Open to freelance backend/full-stack work — let's build something solid together.
+
+- GitHub / YouTube / Discord / Medium: [@AnoopGeorge418](https://github.com/AnoopGeorge418)
+
+<p align="center">✨ Made with curiosity, coffee, and a genuine love for backend engineering ✨</p>
