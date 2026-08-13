@@ -1,0 +1,13 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "A FastAPI project scaffolded with faststrapy."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[all]",
+    "uvicorn",
+    "pydantic-settings",
+    "asyncpg",
+    "black",
+]
