@@ -2,15 +2,28 @@
   "name": "Rivora-MarketplaceForEveryone",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "build": "turbo run build",
     "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
+    
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "format-check": "prettier --check \"**/*.{ts,tsx,md}\"",
+
+    "dev:admin": "turbo dev --filter=admin",
+    "dev:vendor": "turbo dev --filter=vendor",
+    "dev:dev": "turbo dev --filter=dev",
+    "dev:storefront": "turbo dev --filter=storefront",
+    "dev:backend": "cd apps/backend && uv run poe dev",
+
+    "build:admin": "turbo build --filter=admin",
+    "build:vendor": "turbo build --filter=vendor",
+    "build:dev": "turbo build --filter=dev",
+    "build:storefront": "turbo build --filter=storefront"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
-    "turbo": "^2.10.9",
+    "turbo": "^2.10.10",
     "typescript": "5.9.2"
   },
   "engines": {
