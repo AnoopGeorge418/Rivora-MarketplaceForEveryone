@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from uvicorn import run
 
 from app.core.config.settings import APP_SETTINGS
+from app.modules.auth.routes.social_routes import social_auth_route
 from app.modules.health.routes.health_route import health_route
 
 app = FastAPI(
@@ -14,6 +15,7 @@ app = FastAPI(
 
 # registering routes
 app.include_router(router=health_route, prefix=f"/{APP_SETTINGS.SERVER_BASE_API}")
+app.include_router(router=social_auth_route, prefix=f"/{APP_SETTINGS.SERVER_BASE_API}/auth") # auth route
 
 if __name__ == "__main__":
     run(
