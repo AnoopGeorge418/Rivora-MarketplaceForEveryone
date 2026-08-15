@@ -1,159 +1,62 @@
-# Turborepo starter
+# Rivora - Marketplace for Everyone
 
-This Turborepo starter is maintained by the Turborepo core team.
+Rivora is a full-stack, multi-vendor ecommerce platform built to give anyone — individual sellers, small businesses, and established vendors alike — a place to reach customers, without the complexity or gatekeeping of traditional marketplaces.
 
-## Using this example
+## ✨ Highlights
 
-Run the following command:
+- 🔐 **Full OAuth2 + JWT auth** — Google OAuth and credential-based login with role-based access control across four distinct portals
+- 🏪 **Multi-vendor architecture** — vendors manage their own catalog and orders independently, with admin-level moderation and oversight
+- ⚡ **SEO-optimized storefront** — Next.js-powered customer experience built for performance and discoverability
+- 🧩 **Monorepo architecture** — Turborepo-powered, with independently deployable apps and a shared design system + typed API client
+- 🐳 **Production-style infra** — Dockerized services, async SQLAlchemy, Alembic migrations, and CI/CD via GitHub Actions
 
-```sh
-npx create-turbo@latest
-```
+## 👥 Roles
 
-## What's inside?
+| Role | Description |
+|------|-------------|
+| **Customer** | Browses and purchases across a diverse, multi-vendor catalog via a fast, SEO-optimized storefront |
+| **Vendor** | Manages their own products, inventory, and orders through a dedicated vendor panel |
+| **Admin** | Oversees platform-wide moderation, vendor approval, and operational health |
+| **Developer** | Integrates with Rivora through a dedicated API and developer portal |
 
-This Turborepo includes the following packages/apps:
+## 🏗️ Architecture & Stack
 
-### Apps and Packages
+**Backend**
+- `FastAPI` · async `SQLAlchemy` · `PostgreSQL` (Neon) · `Redis` · `Alembic`
+- Deployed independently on `Render`
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+**Frontend**
+- `Turborepo` monorepo
+- `Next.js` — customer storefront (SEO-critical)
+- `React` + `Vite` — admin, vendor, and developer panels
+- Deployed on `Vercel`
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+**Auth**
+- OAuth2 (Google) + credential-based login
+- `JWT`-based sessions with role-based access control across all portals
 
-### Utilities
+**Infrastructure**
+- `Docker` containerized services
+- `GitHub Actions` CI/CD
+- Shared component library and typed API client across all frontend apps
 
-This Turborepo has some additional tools already setup for you:
+## 📌 Why Rivora
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+Rivora reflects real-world ecommerce platform architecture — role-based multi-tenancy, independently deployable services, and a scalable monorepo structure — built as a hands-on deep dive into production-grade backend and full-stack system design.
 
-### Build
+---
 
-To build all apps and packages, run the following command:
+<p align="center">Built as a deep-dive into full-stack architecture, from database schema to deployment.</p>
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+## 🧑‍💻 About the Developer
 
-```sh
-cd my-turborepo
-turbo build
-```
+Built with passion and a lot of late-night debugging by **Anoop George** — a freelance full-stack developer specializing in backend architecture, scalable APIs, and production-grade system design.
 
-Without global `turbo`, use your package manager:
+Rivora showcases the kind of end-to-end thinking I bring to client projects — from database schema and auth architecture to multi-role platforms and deployment pipelines.
 
-```sh
-cd my-turborepo
-npx turbo build
-bun dlx turbo build
-bun exec turbo build
-```
+Open to freelance backend/full-stack work — let's build something solid together.
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+- GitHub / YouTube / Discord / Medium: [@AnoopGeorge418](https://github.com/AnoopGeorge418)
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+<p align="center">✨ Made with curiosity, coffee, and a genuine love for backend engineering ✨</p>
 
-```sh
-turbo build --filter=docs
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo build --filter=docs
-bun exec turbo build --filter=docs
-bun exec turbo build --filter=docs
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo dev
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo dev
-bun exec turbo dev
-bun exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo dev --filter=web
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo dev --filter=web
-bun exec turbo dev --filter=web
-bun exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-bun exec turbo login
-bun exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-bun exec turbo link
-bun exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
