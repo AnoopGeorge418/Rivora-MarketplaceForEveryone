@@ -1,0 +1,10 @@
+{
+  "name": "backend",
+  "private": true,
+  "scripts": {
+    "dev": "uv run poe dev",
+    "build": "echo 'no build step for backend'",
+    "lint": "uv run poe lint",
+    "format": "uv run poe format"
+  }
+}
