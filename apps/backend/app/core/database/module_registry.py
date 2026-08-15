@@ -1,2 +1,0 @@
-# Register all database models here so that alembic can use it for data migration.
-# Ex: from app.model.user import User
