@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from uvicorn import run
 
 from app.core.config.settings import APP_SETTINGS
-from app.modules.routes.health_route import route
+from app.modules.health.routes.health_route import health_route
 
 app = FastAPI(
     title=APP_SETTINGS.APP_NAME,
@@ -13,7 +13,7 @@ app = FastAPI(
 )
 
 # registering routes
-app.include_router(router=route, prefix=f"/{APP_SETTINGS.SERVER_BASE_API}")
+app.include_router(router=health_route, prefix=f"/{APP_SETTINGS.SERVER_BASE_API}")
 
 if __name__ == "__main__":
     run(

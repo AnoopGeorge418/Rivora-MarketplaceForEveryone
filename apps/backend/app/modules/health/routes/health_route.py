@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-route = APIRouter(tags=["Health route"])
+health_route = APIRouter(tags=["Health route"])
 
 
-@route.get("/")
+@health_route.get("/")
 def get_health():
     return {"Progress": "Faststrapy Configured entire project", "status": "healthly"}
