@@ -19,6 +19,4 @@ class EmailService:
         if not email:
             raise ValueError("Please enter a valid email address!")
 
-        result = await self.repo.check_user_by_email(email=email)
-        if result:
-            ...
+        return await self.repo.check_user_by_email(email=email)
