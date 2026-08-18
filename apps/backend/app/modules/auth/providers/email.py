@@ -1,0 +1,4 @@
+class EmailAuthProvider:
+    """Email Authentication"""
+
+    ...

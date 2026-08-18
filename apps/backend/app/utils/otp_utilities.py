@@ -1,3 +1,4 @@
 class OtpUtilities:
+    """Otp Utitlites"""
+
     ...
-    

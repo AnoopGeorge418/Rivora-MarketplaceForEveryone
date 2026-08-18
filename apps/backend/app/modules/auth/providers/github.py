@@ -1,0 +1,4 @@
+class GithubAuthProvider:
+    """Github Authentication"""
+
+    ...

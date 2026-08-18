@@ -1,0 +1,4 @@
+class MetaAuthProvider:
+    """Meta Authentication"""
+
+    ...
