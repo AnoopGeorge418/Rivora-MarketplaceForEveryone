@@ -12,6 +12,7 @@ dependencies = [
     "alembic>=1.19.1",
     "python-dotenv>=1.2.2",
     "pydantic>=2.13.4",
+    "slowapi>=0.1.10",
 ]
 
 [dependency-groups]
@@ -62,9 +63,9 @@ help = "Run lint, format-check, and typecheck together"
 
 # makemigration args handle
 [tool.poe.tasks.makemigration]
-cmd = "alembic revision --autogenerate -m $message"
+cmd = "alembic revision --autogenerate -m \"${message}\""
+args = [{ name = "message", positional = true, required = true }]
 help = "Generate a new Alembic migration with a message"
-args = [{ name = "message", positional = true, required = true, help = "commit message" }]
 
 # freeze packages to requirements.txt file
 [tool.poe.tasks.freeze]

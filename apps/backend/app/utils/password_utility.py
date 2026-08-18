@@ -1,3 +1,4 @@
 class PasswordUtilities:
+    """Password utilities"""
+
     ...
-    

@@ -1,10 +1,8 @@
-"""Entry point for backend."""
-
 from fastapi import FastAPI
 from uvicorn import run
 
 from app.core.config.settings import APP_SETTINGS
-from app.modules.auth.routes.email_route import email_auth_route
+from app.modules.auth.routes.routes import auth_route
 from app.modules.health.routes.health_route import health_route
 
 app = FastAPI(
@@ -15,7 +13,9 @@ app = FastAPI(
 
 # registering routes
 app.include_router(router=health_route, prefix=f"/{APP_SETTINGS.SERVER_BASE_API}")
-app.include_router(router=email_auth_route, prefix=f"/{APP_SETTINGS.SERVER_BASE_API}/auth") # auth route
+app.include_router(
+    router=auth_route, prefix=f"/{APP_SETTINGS.SERVER_BASE_API}"
+)  # auth route
 
 if __name__ == "__main__":
     run(
