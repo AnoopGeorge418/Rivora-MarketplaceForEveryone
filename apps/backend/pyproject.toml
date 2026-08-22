@@ -21,16 +21,18 @@ dev = [
     "poethepoet>=0.48.0",
 ]
 
+
+
+# custom run commands -----------
 [tool.black]
 target-version = ["py312"]
 
-# custom run commands
-# development server
+# development server -----------
 [tool.poe.tasks.dev]
 cmd = "uv run -m app.main"
 help = "Start the FastAPI dev server with hot reload"
 
-# alembic migrations
+# alembic migrations ---------
 [tool.poe.tasks.migrate]
 cmd = "alembic upgrade head"
 help = "Apply all pending Alembic migrations"
@@ -39,11 +41,14 @@ help = "Apply all pending Alembic migrations"
 cmd = "alembic downgrade -1"
 help = "Roll back the last migration"
 
-# --- Linting / formatting ---
-[tool.poe.tasks.lint]
-cmd = "ruff check ."
-help = "Lint the codebase with Ruff"
+# makemigration args handle
+[tool.poe.tasks.makemigration]
+cmd = "alembic revision --autogenerate -m \"${message}\""
+args = [{ name = "message", positional = true, required = true }]
+help = "Generate a new Alembic migration with a message"
 
+
+# Formatting ---------
 [tool.poe.tasks.format]
 cmd = "black ."
 help = "Format code with Black"
@@ -52,22 +57,7 @@ help = "Format code with Black"
 cmd = "black --check ."
 help = "Check formatting without modifying files"
 
-[tool.poe.tasks.typecheck]
-cmd = "mypy app"
-help = "Run static type checking with mypy"
-
-# --- Composite tasks (run several in sequence) ---
-[tool.poe.tasks.check]
-sequence = ["lint", "format-check", "typecheck"]
-help = "Run lint, format-check, and typecheck together"
-
-# makemigration args handle
-[tool.poe.tasks.makemigration]
-cmd = "alembic revision --autogenerate -m \"${message}\""
-args = [{ name = "message", positional = true, required = true }]
-help = "Generate a new Alembic migration with a message"
-
-# freeze packages to requirements.txt file
+# freeze packages to requirements.txt file ------
 [tool.poe.tasks.freeze]
 shell = "uv pip freeze > requirements.txt"
 help = "Freeze installed packages to requirements.txt"
